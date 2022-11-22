@@ -26,10 +26,10 @@ export const authApi = createApi({
 			invalidatesTags: [{ type: "data", id: "LIST" }],
 		}),
 		verify: build.mutation({
-			query: ({ emailCode='', email='' }) => ({
-				url: `/auth/verifyEmail?emailCode=${emailCode}&email=${email}`,
+			query: (body) => ({
+				url: `/auth/verifyEmail`,
 				method: "POST",
-				params: { emailCode, email },
+				body,
 			}),
 			invalidatesTags: [{ type: "data", id: "LIST" }],
 		}),
