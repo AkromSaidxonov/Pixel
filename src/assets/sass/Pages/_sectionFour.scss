@@ -1,0 +1,48 @@
+/** @format */
+
+.sectionFour {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	h1 {
+		color: #02246a;
+		font-weight: 700;
+		text-align: center;
+	}
+	&__item {
+		@include flex(center);
+		margin-top: 50px;
+		h3 {
+			color: #02246a;
+			font-size: 30px;
+			margin-right: 15px;
+		}
+		span {
+			font-size: 30px;
+			margin-top: -10px;
+			width: 40px;
+		}
+	}
+	&__users {
+		@include flex();
+		margin-right: 20px;
+		span {
+			font-weight: 900;
+			color: #02246a;
+		}
+	}
+	&__activUsers {
+		@include flex();
+		margin-right: 20px;
+		span {
+			font-weight: 900;
+			color: #265c02;
+		}
+	}
+	&__usersNoActive {
+		@include flex();
+		span {
+			font-weight: 900;
+			color: #930000;
+		}
+	}
+}

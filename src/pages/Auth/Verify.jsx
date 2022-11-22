@@ -13,16 +13,15 @@ const Verify = () => {
 	const navigate = useNavigate();
 	const [code, setCode] = useState();
 	const { userEmail } = useParams();
-	const [verify, { data, error, isError, isLoading, isSuccess }] = useVerifyMutation();
-
+	const [verify, { data, error, isError, isLoading, isSuccess }] =useVerifyMutation();
 	useEffect(() => {
 		isError && toast.error(error.data.responseText);
-        isSuccess && navigate('/')
+		isSuccess && navigate("/");
 	}, [data, isError]);
 
 	const handleLogin = (e) => {
 		e.preventDefault();
-		verify({code, email:userEmail});
+		verify( {emailCode:code, email:userEmail });
 	};
 
 	return (

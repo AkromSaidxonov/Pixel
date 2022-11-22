@@ -12,12 +12,10 @@ const Reset = () => {
 	const cookies = new Cookies();
 	const navigate = useNavigate();
 	const [email, setEmail] = useState();
-	const [sendEmail, setSendEmail] = useState(sendEmail);
+
 
 	const [reset,{data, isError, isLoading, error}]= useResetMutation();
-	const userData = {
-		userName: email,
-	};
+
 
 	useEffect(() => {	
 		isError && toast.error(error.data.responseText);

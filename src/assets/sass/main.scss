@@ -1,3 +1,5 @@
+/** @format */
+
 @import "./Base/reset";
 @import "./Base/typography";
 @import "./Base/utiles";
@@ -6,11 +8,19 @@
 @import "./mixin";
 @import "./Components/button";
 
-@import './Pages/login';
-@import './Pages/signup';
-@import './Pages/reset';
-@import './Pages/verify';
-
-
-
-
+@import "./Pages/login";
+@import "./Pages/signup";
+@import "./Pages/reset";
+@import "./Pages/verify";
+@import "./Pages/navbar";
+@import "./Pages/sectionOne";
+@import "./Pages/sectionTwo";
+@import "./Pages/sectionThree";
+@import "./Pages/sectionFour";
+@import "./Pages/footer";
+@import "./Pages/todoLink";
+@import "./Pages/todo";
+@import "./Pages/finishedTodo";
+@import "./Pages/addTodoList";
+@import "./Pages/shov-todoList";
+@import "./Pages/EditTodo";

@@ -1,0 +1,29 @@
+/** @format */
+
+.finishedTodo {
+	@include flex(start);
+
+	&__item {
+		margin-bottom: 10px;
+		display: flex !important;
+	}
+	&__cart {
+		width: 250px;
+		margin-right: 10px;
+	}
+	&__cart-header {
+		@include flex(space-between);
+	}
+	&__view {
+		font-size: 20px;
+		color: #02246b;
+	}
+	&__status {
+		img {
+			width: 20px;
+			height: 20px;
+			margin-left: 15px;
+			// margin-top: -5px;
+		}
+	}
+}

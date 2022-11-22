@@ -1,0 +1,14 @@
+/** @format */
+
+.todoLink {
+	margin-top: 50px;
+	@include flex();
+	&__link {
+		width: 100%;
+		height: 80vh;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		box-shadow: 0 0 10px -5px #696969;
+		padding: 20px;
+	}
+}

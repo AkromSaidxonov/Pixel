@@ -1,0 +1,33 @@
+/** @format */
+
+.sectionOne {
+	height: 600px;
+	background-image: url(../img/bg/bg.jpg);
+	background-position: center;
+	background-size: cover;
+
+	&__items {
+		@include flex(center);
+	}
+	&__video {
+		width: 600px;
+		margin-top: 50px;
+		box-shadow: 0 0 10px -5px #696969;
+		video {
+			width: 600px;
+			border-radius: 10px;
+		}
+	}
+	&__info {
+		color: #fff;
+		text-align: center;
+		margin-right: 50px;
+		h1 {
+			font-size: 45px;
+			font-weight: 600;
+		}
+		p {
+			font-size: 25px;
+		}
+	}
+}

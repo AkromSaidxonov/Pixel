@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useEffect } from "react";
-import { Input, Button, Form } from "antd";
+import { Input, Button } from "antd";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
 import { toast } from "react-toastify";
 import { useLoginMutation } from "../../redux/auth/authApi";
@@ -19,7 +19,6 @@ const Login = () => {
 		userName: email,
 		password: password,
 	};
-	console.log(isLoading);
 	useEffect(() => {
 		const setToken = (token) => {
 			if (token !== undefined) {
@@ -27,7 +26,8 @@ const Login = () => {
 				navigate("/");
 			}
 		};
-		data && setToken(data.token);
+		data && setToken(data.token) 
+		data && window.localStorage.setItem('token', data.token)
 		isError && toast.error("Login or password was error");
 	}, [data, isError]);
 
