@@ -437,12 +437,12 @@ button {
   flex-wrap: wrap;
 }
 .navbar__logo img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin-right: 10px;
 }
 .navbar__logo a {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 900;
   color: #fff;
   letter-spacing: 3px;
@@ -460,34 +460,41 @@ button {
   cursor: pointer;
   font-weight: 600;
 }
+.navbar__menu {
+  color: #fff;
+  margin-right: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 24px;
+  background: transparent;
+}
 .navbar__user {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
-.navbar__user h1 {
-  color: #fff;
-  margin-right: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  font-size: 24px;
-  margin-top: 15px;
-}
 .navbar__user .avatar {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
 .navbar__user .avatar img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
+}
+
+.ant-menu-title-content {
+  color: #fff;
+}
+.ant-menu-title-content span {
+  color: #02246b !important;
 }
 
 /** @format */
@@ -667,6 +674,7 @@ button {
   font-size: 30px;
   margin-top: -10px;
   width: 40px;
+  margin-left: 15px;
 }
 .sectionFour__users {
   display: flex;
@@ -725,7 +733,6 @@ button {
 }
 .todoLink__link {
   width: 100%;
-  height: 80vh;
   margin-top: 20px;
   margin-bottom: 20px;
   box-shadow: 0 0 10px -5px #696969;
@@ -734,6 +741,10 @@ button {
 
 /** @format */
 .todo {
+  position: relative;
+  height: 100%;
+}
+.todo__main-sec {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -783,9 +794,26 @@ button {
 .todo__cart-detail div {
   font-size: 20px;
 }
+.todo .pagination {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.todo h4 {
+  font-size: 22px;
+  color: #02246b;
+  font-weight: 600;
+  cursor: pointer;
+}
 
 /** @format */
 .finishedTodo {
+  height: 100%;
+}
+.finishedTodo__main-section {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -797,7 +825,7 @@ button {
 }
 .finishedTodo__cart {
   width: 250px;
-  margin-right: 10px;
+  margin-right: 30px;
 }
 .finishedTodo__cart-header {
   display: flex;
@@ -808,11 +836,29 @@ button {
 .finishedTodo__view {
   font-size: 20px;
   color: #02246b;
+  margin-top: -10px;
+}
+.finishedTodo__status {
+  margin-top: -10px;
 }
 .finishedTodo__status img {
   width: 20px;
   height: 20px;
   margin-left: 15px;
+}
+.finishedTodo__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.finishedTodo .pagination {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
 }
 
 /** @format */
@@ -952,4 +998,88 @@ button {
 }
 .editTodo__input {
   margin-bottom: 15px;
+}
+
+/** @format */
+.addTodo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 50px 0 50px 0;
+}
+.addTodo__form {
+  width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px -5px #696969;
+  padding: 40px 30px;
+  border-radius: 10px;
+}
+.addTodo__form h1 {
+  color: #02246a;
+  font-weight: 700;
+  text-align: center;
+}
+.addTodo__form button {
+  padding: 10px 20px;
+  color: #02246a;
+  border: 1px solid #02246a;
+  border-radius: 10px;
+  background: transparent;
+  transition: 0.5s ease-in-out;
+}
+.addTodo__form button:hover {
+  color: #fff;
+  border: 1px solid #02246a;
+  background: #02246a;
+  cursor: pointer;
+}
+.addTodo__input {
+  margin-bottom: 15px;
+}
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #02246b;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.deleteUser {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.deleteUser__item {
+  box-shadow: 0 0 10px -5px #696969;
+  padding: 40px 20px;
+}
+.deleteUser p {
+  color: #02246b;
+  font-weight: 600;
+  text-align: center;
+}
+.deleteUser__form {
+  display: flex;
+}
+.deleteUser__button button {
+  padding: 10px 20px;
+  background-color: #02246b;
+  color: #fff;
+  border-radius: 10px;
+}
+.deleteUser span {
+  color: red;
+}
+.deleteUser__input {
+  margin-right: 15px;
 }/*# sourceMappingURL=main.css.map */

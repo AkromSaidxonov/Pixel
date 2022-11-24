@@ -28,7 +28,7 @@ const SectionFour = () => {
 					<CountUp start={0} end={data && data.notActiveUser} delay={0}>
 						{({ countUpRef }) => (
 							<div className='sectionFour__usersNoActive'>
-								<h3>Not active users :</h3> <span ref={countUpRef} />{" "}
+								<h3>Not active users :</h3>  <span ref={countUpRef} />{" "}
 								<span> %</span>
 							</div>
 						)}

@@ -27,7 +27,6 @@ const Add = () => {
 			},
 		],
 	};
-	console.log(isError, isSuccess);
 	const handleAdd = async () => {
 		await addTodoList(todoListData);
 		isError == true ? toast.error("Went error") : toast.error("Went error");

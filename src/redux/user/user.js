@@ -6,8 +6,8 @@ export const userApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://pixel-inc.herokuapp.com/api",
     prepareHeaders: (headers, { getState }) => {
-    //   const token = getState().authSlice.token;
-    console.log(token);
+      // const token = getState().authSlice.token;
+    // console.log(getState().authSlice.token);
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
       }
@@ -26,9 +26,32 @@ export const userApi = createApi({
           : [{ type: "user", id: "LIST" }],
     }),
     deleteUser: build.mutation({
+      query: (email) => ({
+        url: `/deletedSendingCode?email=${email}`,
+        method: "POST",
+      }),
+      invalidatesTags: [{ type: "user", id: "LIST" }],
+    }),
+    confirmDeleteUser: build.mutation({
+      query: (body) => ({
+        url: `/deleted`,
+        method: "Delete",
+        body
+      }),
+      invalidatesTags: [{ type: "user", id: "LIST" }],
+    }),
+    deleteImg: build.mutation({
       query: (id) => ({
-        url: `/car/${id}`,
+        url: `/attachment/${id}`,
         method: "DELETE",
+      }),
+      invalidatesTags: [{ type: "user", id: "LIST" }],
+    }),
+    setImgUser: build.mutation({
+      query: (body) => ({
+        url: `/attachment`,
+        method: "POST",
+        body
       }),
       invalidatesTags: [{ type: "user", id: "LIST" }],
     }),
@@ -48,5 +71,8 @@ export const userApi = createApi({
 export const {
 useGetUserQuery,
 useDeleteUserMutation,
-useGetUserInfoQuery
+useGetUserInfoQuery,
+useSetImgUserMutation,
+useDeleteImgMutation,
+useConfirmDeleteUserMutation
 } = userApi;

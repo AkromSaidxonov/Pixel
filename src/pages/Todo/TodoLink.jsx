@@ -1,39 +1,41 @@
 /** @format */
 
-import React from "react";
+import React, {useState} from "react";
 import { Tabs } from "antd";
 import Todo from "./Todo";
 import FinishedTodo from "./FinishedTodo";
+import { useGetTodoFinishedQuery } from "../../redux/todo/todo";
+import AddTodo from "../../components/Todo/AddTodo";
+import { Routes, Router, Route } from "react-router";
 
 const TodoLink = () => {
-	return (
-		<div className='container todoLink'>
-			<div className='todoLink__link'>
-				<Tabs
-					centered
-					defaultActiveKey='1'
-					items={[
-						{
-							label: "Todos",
-							key: "1",
-							children: <Todo />,
-						},
-						{
-							label: "Tab 2",
-							key: "2",
-							children: "Tab 2",
-							disabled: true,
-						},
-						{
-							label: "Tab 3",
-							key: "3",
-							children: <FinishedTodo />,
-						},
-					]}
-				/>
-			</div>
-		</div>
-	);
+  const [pag, setPag] = useState(0);
+  
+  const { data } = useGetTodoFinishedQuery(pag);
+
+  return (
+    <div className="container todoLink">
+      <div className="todoLink__link">
+        <Tabs
+          centered
+          animated={true}
+          items={[
+            {
+              label: "Todos",
+              key: "1",
+              children: <Todo />,
+            },
+            {
+              label: "Finished todos",
+              key: "2",
+              children: <FinishedTodo data={data} setPag={setPag} />,
+              disabled: data && data.responseText === "Empty" ? true : false,
+            },
+          ]}
+        />
+      </div>
+    </div>
+  );
 };
 
 export default TodoLink;

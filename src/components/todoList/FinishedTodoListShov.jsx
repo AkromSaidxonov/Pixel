@@ -16,7 +16,7 @@ import green from "../../assets/img/icon/circle (1).png";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 
-const Shov = () => {
+const FinishedTodoListShov = () => {
   const { id, date } = useParams();
   const { data } = useGetTodoListQuery(id);
   const [deleteTodoList, { isSuccess }] = useDeleteTodoListMutation();
@@ -75,20 +75,6 @@ const Shov = () => {
                     </span>
                   </div>
                 }
-                actions={[
-                  <CheckOutlined
-                    key="finshed"
-                    onClick={handleFinsh.bind(null, item.id)}
-                  />,
-                  <EditOutlined
-                    onClick={hendleEdit.bind(null, item.id)}
-                    key="edit"
-                  />,
-                  <DeleteOutlined
-                    key="delete"
-                    onClick={handleDelete.bind(null, item.id)}
-                  />,
-                ]}
               >
                 <div className="showTodoList__card-body">
                   <p>
@@ -107,4 +93,4 @@ const Shov = () => {
   );
 };
 
-export default Shov;
+export default FinishedTodoListShov;

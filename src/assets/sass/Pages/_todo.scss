@@ -1,8 +1,11 @@
 /** @format */
 
 .todo {
+	position: relative;
+	height: 100%;
+	&__main-sec{
 	@include flex(start);
-
+}
 	&__item {
 		margin-bottom: 10px;
 		display: flex !important;
@@ -52,4 +55,18 @@
 			font-size: 20px;
 		}
 	}
+	
+	.pagination{
+		width: 100%;
+		@include flex(center);
+		margin-top: 15px;
+
+	}
+	h4{
+		font-size: 22px;
+		color: #02246b;
+		font-weight: 600;
+		cursor: pointer;
+	}
 }
+

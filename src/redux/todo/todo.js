@@ -27,6 +27,16 @@ export const todoApi = createApi({
 					  ]
 					: [{ type: "todo", id: "LIST" }],
 		}),
+		getTodoFinished: build.query({
+			query: (page = 0) => `/todos/finished?pageNumber=${page}`,
+			providesTags: (result) =>
+				result.data && result.data.list
+					? [
+							...result.data.list.map(({ id }) => ({ type: "todo", id })),
+							{ type: "todo", id: "LIST" },
+					  ]
+					: [{ type: "todo", id: "LIST" }],
+		}),
 		deleteTodo: build.mutation({
 			query: (id) => ({
 				url: `/todos/${id}`,
@@ -66,4 +76,5 @@ export const {
 	useEditTodoMutation,
 	useFinshTodoMutation,
 	useGetTodoQuery,
+	useGetTodoFinishedQuery
 } = todoApi;

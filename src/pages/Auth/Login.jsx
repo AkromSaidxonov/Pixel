@@ -28,6 +28,7 @@ const Login = () => {
 		};
 		data && setToken(data.token) 
 		data && window.localStorage.setItem('token', data.token)
+		data && window.localStorage.setItem('userEmail', email)
 		isError && toast.error("Login or password was error");
 	}, [data, isError]);
 

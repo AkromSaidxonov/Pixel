@@ -1,15 +1,14 @@
 /** @format */
 
 import React, { useState, useEffect } from "react";
-import { Input, Button, Form } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { Input, Button } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 import { toast } from "react-toastify";
 import { useResetMutation } from "../../redux/auth/authApi";
-import { Link, useNavigate } from "react-router-dom";
-import Cookies from "universal-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Reset = () => {
-	const cookies = new Cookies();
+	
 	const navigate = useNavigate();
 	const [email, setEmail] = useState();
 
