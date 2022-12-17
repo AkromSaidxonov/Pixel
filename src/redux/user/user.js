@@ -4,10 +4,10 @@ export const userApi = createApi({
   reducerPath: "reqres/user",
   tagTypes: ["user"],
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://pixel-inc.herokuapp.com/api",
+    baseUrl: "https://pixel.up.railway.app/api",
     prepareHeaders: (headers, { getState }) => {
       // const token = getState().authSlice.token;
-    // console.log(getState().authSlice.token);
+      // console.log(getState().authSlice.token);
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
       }
@@ -16,7 +16,7 @@ export const userApi = createApi({
   }),
   endpoints: (build) => ({
     getUser: build.query({
-      query: () => '/profil',
+      query: () => "/profil",
       providesTags: (result) =>
         result.data && result.data
           ? [
@@ -36,7 +36,7 @@ export const userApi = createApi({
       query: (body) => ({
         url: `/deleted`,
         method: "Delete",
-        body
+        body,
       }),
       invalidatesTags: [{ type: "user", id: "LIST" }],
     }),
@@ -51,12 +51,12 @@ export const userApi = createApi({
       query: (body) => ({
         url: `/attachment`,
         method: "POST",
-        body
+        body,
       }),
       invalidatesTags: [{ type: "user", id: "LIST" }],
     }),
     getUserInfo: build.query({
-      query: () => '/home/userCount',
+      query: () => "/home/userCount",
       providesTags: (result) =>
         result.data && result.data
           ? [

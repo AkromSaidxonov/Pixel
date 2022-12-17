@@ -20,7 +20,6 @@ function DeleteUser() {
   const cookies = new Cookies();
 
   const DeleteDate = {
-    email: email,
     password: password,
     code: code,
   };
@@ -28,23 +27,27 @@ function DeleteUser() {
   useEffect(() => {
     deleteUser(email);
     isError === true ? navigate("/") && toast.error("Went error") : "";
-  }, []);
+    if (isSuccess === true) {
+      cookies.remove("token");
+      localStorage.removeItem("token");
+      navigate("/");
+      location.reload();
+    }
+  }, [isSuccess, isError]);
 
   const handleDeleteUser = (e) => {
+    e.preventDefault();
     swal({
       title: "Are you sure?",
-      text: " Delete img",
+      text: " Delete your account",
       icon: "warning",
       buttons: true,
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        e.preventDefault();
         confirmDeleteUser(DeleteDate);
-        cookies.remove("token");
-        localStorage.removeItem("token");
-        location.reload();
       }
+
     });
   };
   return (
