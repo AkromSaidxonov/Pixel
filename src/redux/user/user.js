@@ -1,13 +1,13 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-const token = localStorage.getItem('token')
+// const token = localStorage.getItem('token')
 export const userApi = createApi({
   reducerPath: "reqres/user",
   tagTypes: ["user"],
   baseQuery: fetchBaseQuery({
     baseUrl: "https://pixel.up.railway.app/api",
     prepareHeaders: (headers, { getState }) => {
-      // const token = getState().authSlice.token;
-      // console.log(getState().authSlice.token);
+      const token = getState().authSlice?.token;
+      console.log(getState().authSlice?.token);
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
       }
@@ -18,7 +18,7 @@ export const userApi = createApi({
     getUser: build.query({
       query: () => "/profil",
       providesTags: (result) =>
-        result.data && result.data
+        result?.data && result?.data
           ? [
               ...result.data.map(({ id }) => ({ type: "user", id })),
               { type: "user", id: "LIST" },

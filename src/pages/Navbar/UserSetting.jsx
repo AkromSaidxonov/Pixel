@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/img/logo/pixel.png";
-import { Dropdown,  Divider, Avatar,  Modal } from "antd";
+import { Dropdown, Divider, Avatar, Modal } from "antd";
 import {
   useGetUserQuery,
   useSetImgUserMutation,
@@ -17,17 +17,17 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 function UserSetting() {
+  const { data } = useGetUserQuery();
   const cookies = new Cookies();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [img, setImg] = useState();
   const formData = new FormData();
   formData.append("file", img);
-  const { data } = useGetUserQuery();
   const [setImgUser, { isSuccess }] = useSetImgUserMutation();
   const [deleteImg, { isError }] = useDeleteImgMutation();
   const navigate = useNavigate();
-  useEffect(() => {}, [data]);
-
+  useEffect(() => {
+  }, [data]);
 
   const handleLogOut = () => {
     swal({
@@ -40,9 +40,8 @@ function UserSetting() {
       if (willDelete) {
         cookies.remove("token");
         localStorage.removeItem("token");
-        navigate('/')
+        navigate("/");
         location.reload();
-        
       }
     });
   };
@@ -98,7 +97,7 @@ function UserSetting() {
     {
       key: "4",
       label: <p onClick={handleLogOut}>Log out</p>,
-      icon: < LeftSquareOutlined />,
+      icon: <LeftSquareOutlined />,
     },
   ];
   return (
@@ -138,7 +137,7 @@ function UserSetting() {
           {data ? (
             data.attachamentContentId === null ? (
               <h1 style={{ color: "white", textAlign: "center" }}>
-                {data && data.userName.slice(0, 1)}
+                {data && data?.userName.slice(0, 1)}
               </h1>
             ) : (
               <img
