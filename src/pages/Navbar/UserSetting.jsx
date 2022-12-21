@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/img/logo/pixel.png";
-import { Link } from "react-router-dom";
-import { Dropdown, Space, Divider, Avatar, Menu, Modal, Button } from "antd";
+import { Dropdown,  Divider, Avatar,  Modal } from "antd";
 import {
   useGetUserQuery,
   useSetImgUserMutation,
@@ -27,7 +26,6 @@ function UserSetting() {
   const [setImgUser, { isSuccess }] = useSetImgUserMutation();
   const [deleteImg, { isError }] = useDeleteImgMutation();
   const navigate = useNavigate();
-  console.log(data);
   useEffect(() => {}, [data]);
 
 

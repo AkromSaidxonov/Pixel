@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import logo from "../../assets/img/logo/pixel.png";
 import { Link } from "react-router-dom";
 import { Dropdown, Space, Divider } from "antd";
+import DrawerComp from "./DrawerComp";
 
 import { DownOutlined } from "@ant-design/icons";
 
@@ -52,6 +53,7 @@ const Navbar = () => {
             </Dropdown>
           </div>
           <UserSetting />
+          <DrawerComp />
         </div>
       </div>
     </div>
