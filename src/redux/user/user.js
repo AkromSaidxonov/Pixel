@@ -7,7 +7,6 @@ export const userApi = createApi({
     baseUrl: "https://pixel.up.railway.app/api",
     prepareHeaders: (headers, { getState }) => {
       const token = getState().authSlice?.token;
-      console.log(getState().authSlice?.token);
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
       }
