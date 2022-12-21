@@ -24,115 +24,24 @@ a {
 }
 
 .container {
-  width: 1440px;
-  margin: 0 auto !important;
+  width: 1140px;
+  margin: 0 auto;
 }
 
 button {
   border: none;
   outline: none;
-}
-
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.mb-1 {
-  margin-bottom: 10px !important;
-}
-
-.mb-2 {
-  margin-bottom: 20px !important;
-}
-
-.mt-2 {
-  margin-bottom: 20px !important;
-}
-
-.mb-3 {
-  margin-bottom: 30px !important;
-}
-
-.mb-5 {
-  margin-bottom: 50px !important;
-}
-
-.mb-6 {
-  margin-bottom: 60px !important;
-}
-
-.mb-7 {
-  margin-bottom: 70px !important;
 }
 
 /** @format */
 .container {
-  width: 1440px;
-  margin: 0 auto !important;
+  width: 1140px;
+  margin: 0 auto;
 }
 
 button {
   border: none;
   outline: none;
-}
-
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.mb-1 {
-  margin-bottom: 10px !important;
-}
-
-.mb-2 {
-  margin-bottom: 20px !important;
-}
-
-.mt-2 {
-  margin-bottom: 20px !important;
-}
-
-.mb-3 {
-  margin-bottom: 30px !important;
-}
-
-.mb-5 {
-  margin-bottom: 50px !important;
-}
-
-.mb-6 {
-  margin-bottom: 60px !important;
-}
-
-.mb-7 {
-  margin-bottom: 70px !important;
-}
-
-.admin-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 20px;
-  gap: 8px;
-  background: #2a85ff;
-  border-radius: 12px;
-  color: #fff;
-  cursor: pointer;
 }
 
 .login {
@@ -489,6 +398,14 @@ button {
      object-fit: cover;
   border-radius: 50%;
 }
+.navbar__user h2 {
+  color: #fff;
+  margin-right: 15px;
+  font-size: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
 
 .ant-menu-title-content {
   color: #fff;
@@ -499,8 +416,9 @@ button {
 
 /** @format */
 .sectionOne {
+  width: 100%;
   height: 600px;
-  background-image: url(../img/bg/bg.jpg);
+  background-image: url(../../img/bg/bg.jpg);
   background-position: center;
   background-size: cover;
 }

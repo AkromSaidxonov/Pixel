@@ -10,7 +10,11 @@
 		font-size: 55px;
 	}
 	&__item {
-		@include flex(space-between);
+		// @include flex(space-between);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
 		width: 700px;
 		margin: 0 auto;
 	}
