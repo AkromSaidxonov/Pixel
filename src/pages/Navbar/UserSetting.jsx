@@ -40,7 +40,9 @@ function UserSetting() {
       if (willDelete) {
         cookies.remove("token");
         localStorage.removeItem("token");
+        navigate('/')
         location.reload();
+        
       }
     });
   };

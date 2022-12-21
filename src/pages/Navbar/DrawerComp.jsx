@@ -52,6 +52,7 @@ function DrawerComp() {
       if (willDelete) {
         cookies.remove("token");
         localStorage.removeItem("token");
+        navigate("/");
         location.reload();
       }
     });
@@ -90,7 +91,6 @@ function DrawerComp() {
   const handleDeleteUser = () => {
     navigate("/deleteAcaunt");
     setOpen(false);
-
   };
   function getItem(label, key, icon, children) {
     return {
@@ -183,7 +183,7 @@ function DrawerComp() {
           // selectedKeys={[current]}
           mode="inline"
           items={items}
-          className='drawer__menu'
+          className="drawer__menu"
         />
       </Drawer>
       <Modal
