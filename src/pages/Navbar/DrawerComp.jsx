@@ -154,7 +154,6 @@ function DrawerComp() {
         title={
           <div className="drawer__user">
             <h2>{data?.userName}</h2>
-
             <Avatar className="drawer__avatar">
               {data ? (
                 data.attachamentContentId === null ? (

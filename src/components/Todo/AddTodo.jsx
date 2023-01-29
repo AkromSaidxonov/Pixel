@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 
 const AddTodo = () => {
-  const [addTodo, { isSuccess, error, data }] = useAddTodoMutation();
+  const [addTodo, { isSuccess, data }] = useAddTodoMutation();
 
   const [dateTodo, setDateTodo] = useState();
   const [comment, setComment] = useState();
@@ -29,7 +29,9 @@ const AddTodo = () => {
   };
 
   const handleAdd = () => {
-    isSuccess && toast.success(data.responseText);
+    isSuccess
+      ? toast.success(data?.responseText)
+      : toast.error(data?.responseText);
     navigate("/todo");
     addTodo(todoData);
     setDateTodo("");

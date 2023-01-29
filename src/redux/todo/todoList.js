@@ -21,9 +21,9 @@ export const todoListApi = createApi({
       query: (id) => `todos/${id}`,
 
       providesTags: (result) =>
-        result.data && result.data.list
+        result?.data && result?.data?.list
           ? [
-              ...result.data.list.map(({ id }) => ({ type: "todoList", id })),
+              ...result?.data?.list.map(({ id }) => ({ type: "todoList", id })),
               { type: "todoList", id: "LIST" },
             ]
           : [{ type: "todoList", id: "LIST" }],
@@ -62,9 +62,9 @@ export const todoListApi = createApi({
 });
 
 export const {
-	useAddTodoListMutation,
-	useDeleteTodoListMutation,
-	useEditTodoListMutation,
-	useFinshTodoListMutation,
-	useGetTodoListQuery,
+  useAddTodoListMutation,
+  useDeleteTodoListMutation,
+  useEditTodoListMutation,
+  useFinshTodoListMutation,
+  useGetTodoListQuery,
 } = todoListApi;

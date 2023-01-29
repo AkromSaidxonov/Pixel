@@ -2,6 +2,7 @@
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const token = localStorage.getItem("token");
+
 export const todoApi = createApi({
   reducerPath: "reqres/todo",
   tagTypes: ["todo"],
@@ -9,7 +10,6 @@ export const todoApi = createApi({
     baseUrl: "https://pixel.up.railway.app/api",
     prepareHeaders: (headers, { getState }) => {
       //   const token = getState().authSlice.token;
-      console.log(token);
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
       }
@@ -30,9 +30,9 @@ export const todoApi = createApi({
     getTodoFinished: build.query({
       query: (page = 0) => `/todos/finished?pageNumber=${page}`,
       providesTags: (result) =>
-        result.data && result.data.list
+        result?.data && result?.data?.list
           ? [
-              ...result.data.list.map(({ id }) => ({ type: "todo", id })),
+              ...result?.data?.list.map(({ id }) => ({ type: "todo", id })),
               { type: "todo", id: "LIST" },
             ]
           : [{ type: "todo", id: "LIST" }],

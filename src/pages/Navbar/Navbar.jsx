@@ -5,10 +5,11 @@ import logo from "../../assets/img/logo/pixel.png";
 import { Link } from "react-router-dom";
 import { Dropdown, Space, Divider } from "antd";
 import DrawerComp from "./DrawerComp";
-
 import { DownOutlined } from "@ant-design/icons";
 
+import NavButton from "./NavButton";
 import UserSetting from "./UserSetting";
+import AlertNotification from "../../components/Notification/AlertNotification";
 
 const Navbar = () => {
   const items = [
@@ -18,8 +19,17 @@ const Navbar = () => {
     },
   ];
 
+  const navCheckSec = () => {
+    const token = localStorage.getItem("token");
+    if (token === null) {
+      return <NavButton />;
+    } else {
+      return <UserSetting />;
+    }
+  };
   return (
     <div className="navbar">
+      <AlertNotification/>
       <div className="container ">
         <div className="navbar__items">
           <div className="navbar__logo">
@@ -52,8 +62,7 @@ const Navbar = () => {
               </a>
             </Dropdown>
           </div>
-          <UserSetting />
-          <DrawerComp />
+          {navCheckSec()}
         </div>
       </div>
     </div>

@@ -95,7 +95,7 @@ const SignUp = () => {
 					</div>
 					<div className='signup__links'>
 						<h4>or</h4>
-						<Link to='/'>Log-in</Link>
+						<Link to='/login'>Log-in</Link>
 					</div>
 				</form>
 			</div>
