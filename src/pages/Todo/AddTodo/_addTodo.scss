@@ -1,0 +1,37 @@
+/** @format */
+
+.addTodo {
+  // margin-top: 50px;
+  @include flex();
+  padding: 50px 0 50px 0;
+
+  &__form {
+    width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px -5px #696969;
+    padding: 40px 30px;
+    border-radius: 10px;
+    h1 {
+      color: #02246a;
+      font-weight: 700;
+      text-align: center;
+    }
+    button {
+      color: #02246a;
+      border: 1px solid #02246a;
+      border-radius: 10px;
+      background: transparent;
+      transition: 0.5s ease-in-out;
+
+      &:hover {
+        color: #fff;
+        border: 1px solid #02246a;
+        background: #02246a;
+        cursor: pointer;
+      }
+    }
+  }
+  &__input {
+    margin-bottom: 15px;
+  }
+}

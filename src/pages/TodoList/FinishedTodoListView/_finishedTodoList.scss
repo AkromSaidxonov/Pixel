@@ -1,0 +1,56 @@
+/** @format */
+
+.showFinishedTodoList {
+  margin-top: 50px;
+  @include flex();
+  &__link {
+    width: 100%;
+        height: 100%;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px -5px #696969;
+    padding: 20px;
+  }
+  &__cart-main {
+    @include flex;
+  }
+  &__cart {
+    width: 250px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+  }
+  &__status {
+    img {
+      width: 20px;
+      height: 20px;
+      margin-left: 15px;
+    }
+  }
+  &__card-body {
+    p {
+      color: #02246b;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: -5px;
+      span {
+        color: #000;
+        font-weight: 400;
+      }
+    }
+  }
+  &__title {
+    @include flex();
+    margin-bottom: 10px;
+    h1 {
+      color: #02246b;
+      font-weight: 700;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  }
+  h4 {
+    color: #02246b;
+    font-weight: 700;
+  }
+}

@@ -30,7 +30,7 @@ function DrawerComp() {
   const onClose = () => {
     setOpen(false);
   };
-  const cookies = new Cookies();
+  // const cookies = new Cookies();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [img, setImg] = useState();
   const formData = new FormData();
@@ -50,11 +50,11 @@ function DrawerComp() {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        cookies.remove("token");
         localStorage.removeItem("token");
         navigate("/");
-        location.reload();
+        window.location.reload();
       }
+      console.log("log out");
     });
   };
   const showModal = () => {

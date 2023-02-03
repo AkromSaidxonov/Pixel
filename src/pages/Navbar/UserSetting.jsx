@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../assets/img/logo/pixel.png";
-import { Avatar, } from "antd";
-import {
-  useGetUserQuery,
-
-} from "../../redux/user/user";
+import { Avatar } from "antd";
+import { useGetUserQuery } from "../../redux/user/user";
 import Settings from "../../components/Settings/Settings";
 
 function UserSetting() {
+  // const { data } = useGetUserQuery();
+  // const [usData, steUsData] = useState()
   const { data } = useGetUserQuery();
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
-  }, [data]);
-
-
+    if (token) {
+    }
+  }, [token]);
 
   return (
     <div className="navbar">

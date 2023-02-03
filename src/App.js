@@ -1,16 +1,12 @@
-/** @format */
-
-import React, { useEffect, useState } from "react";
+import Reac from "react";
 import { ToastContainer } from "react-toastify";
 
 //
 import Routes from "./routes/Routes";
-
 const App = () => {
   return (
     <div className="App">
       <Routes />
-
       <ToastContainer
         position="bottom-left"
         autoClose={4000}

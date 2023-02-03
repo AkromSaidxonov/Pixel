@@ -1,0 +1,32 @@
+.deleteUser {
+  width: 100%;
+  height: 100%;
+  @include flex(center);
+  flex-direction: column;
+  margin-top: 50px;
+  &__item {
+    box-shadow: 0 0 10px -5px #696969;
+    padding: 40px 20px;
+  }
+  p {
+    color: #02246b;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  button {
+    background-color: #02246b;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+    span {
+      color: #fff;
+    }
+  }
+  span {
+    color: red;
+  }
+  &__input {
+    // margin-right: 15px;
+  }
+}

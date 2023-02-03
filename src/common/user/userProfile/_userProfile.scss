@@ -1,0 +1,19 @@
+.userProfile {
+  @include flex();
+  h3 {
+    color: #02246b;
+    font-weight: 700;
+    font-size: 40px;
+  }
+  .avatar {
+    width: 60px;
+    height: 60px;
+    @include flex(center);
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+}

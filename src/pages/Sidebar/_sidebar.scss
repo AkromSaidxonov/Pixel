@@ -1,0 +1,25 @@
+.sidebar {
+  margin-left: 10px;
+  &__icon {
+    color: #fff;
+    font-size: 30px;
+  }
+  &__userProf {
+    width: 100%;
+    @include flex(end);
+    h3 {
+      color: #02246b;
+      font-size: 25px;
+      margin-top: 10px;
+      margin-right: 15px;
+    }
+  }
+  &__mobileLink {
+    display: none;
+  }
+  @media (max-width: 576px) {
+    &__mobileLink {
+      display: block;
+    }
+  }
+}

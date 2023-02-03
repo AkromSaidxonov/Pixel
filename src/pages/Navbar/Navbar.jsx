@@ -7,8 +7,6 @@ import { Dropdown, Space, Divider } from "antd";
 import DrawerComp from "./DrawerComp";
 import { DownOutlined } from "@ant-design/icons";
 
-import NavButton from "./NavButton";
-import UserSetting from "./UserSetting";
 import AlertNotification from "../../components/Notification/AlertNotification";
 
 const Navbar = () => {
@@ -18,18 +16,10 @@ const Navbar = () => {
       label: <Link to="/todo">Todo</Link>,
     },
   ];
-
-  const navCheckSec = () => {
-    const token = localStorage.getItem("token");
-    if (token === null) {
-      return <NavButton />;
-    } else {
-      return <UserSetting />;
-    }
-  };
   return (
     <div className="navbar">
-      <AlertNotification/>
+      {setProfImg}
+      <AlertNotification />
       <div className="container ">
         <div className="navbar__items">
           <div className="navbar__logo">
@@ -62,7 +52,8 @@ const Navbar = () => {
               </a>
             </Dropdown>
           </div>
-          {navCheckSec()}
+          <UserSetting />
+          <DrawerComp />
         </div>
       </div>
     </div>

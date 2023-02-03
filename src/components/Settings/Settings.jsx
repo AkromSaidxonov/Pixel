@@ -10,7 +10,6 @@ import {
   useSetImgUserMutation,
   useDeleteImgMutation,
 } from "../../redux/user/user";
-import Cookies from "universal-cookie";
 
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -35,7 +34,6 @@ const Settings = ({ name, imgUser }) => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        cookies.remove("token");
         localStorage.removeItem("token");
         navigate("/");
         location.reload();
@@ -50,6 +48,7 @@ const Settings = ({ name, imgUser }) => {
     isSuccess === true
       ? toast.success("Success")
       : toast.error("You can set img only once");
+    data.token;
     setIsModalOpen(false);
   };
   const handleCancel = () => {
