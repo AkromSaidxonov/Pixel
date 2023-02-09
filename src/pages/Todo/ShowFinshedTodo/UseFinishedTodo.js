@@ -8,9 +8,7 @@ import { Card } from "antd";
 export const UseFinishedTodo = (data, setPag) => {
   console.log(data);
   const navigate = useNavigate();
-  const total = parseInt(
-    Math.ceil(data && data?.statistic?.finishedCount / 20) * 10
-  );
+  const total = parseInt(Math.ceil(data && data?.totalPage / 20) * 10);
   const handleView = (id, date) => {
     navigate(`showFinishedTodoList/${id}/${date}`);
   };
